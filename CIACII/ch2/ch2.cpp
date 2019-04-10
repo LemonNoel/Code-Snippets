@@ -77,6 +77,60 @@ void example_2_5() {
 	printf("%d %d %.3f", min_num, max_num, sum * 1.0 / count);
 }
 
+void program_2_10() {
+	/*
+	#define LOCAL
+	#include <stdio.h>
+
+	int main() {
+	#ifdef LOCAL
+		freopen("data.in", "r", stdin);
+		freopen("data.out", "w", stdout);
+	#endif
+		int x;
+		while (scanf("%d", &x) == 1) {
+			printf("%d\n", x+1);
+		}
+		return 0;
+	}
+	*/
+}
+
+void program_2_11() {
+	/*
+	#include <stdio.h>
+
+	int main() {
+		FILE *fin, *fout;
+		fin = fopen("data.in", "rb");
+		fout = fopen("data.out", "wb");
+		int x;
+		while (fscanf(fin, "%d", &x) == 1) {
+			fprintf(fout, "%d\n", x+1);
+		}
+		fclose(fin);
+		fclose(fout);
+		return 0;
+	}
+	*/
+}
+
+void example_2_6() {
+	int num, x, case_num = 1;
+	while (scanf("%d", &num) == 1 && num != 0) {
+		int count = 0, sum = 0.0, min = 1001, max = -1001;
+		for (int i = 0; i < num; ++i) {
+			scanf("%d", &x);
+			count += 1;
+			sum += x;
+			if (x < min) min = x;
+			if (x > max) max = x;
+		}
+		printf("Case %d: %d %d %.3f\n\n", case_num, min, max, sum * 1.0 / count);
+		case_num += 1;
+	}
+}
+
 int main() {
 	//program_2_1();
 	//example_2_1();
@@ -84,6 +138,7 @@ int main() {
 	//example_2_3();
 	//example_2_4();
 	//example_2_5();
+	example_2_6();
 
 	//printf("Time Used: %.3fs\n", (double)clock() / CLOCKS_PER_SEC);
 	return 0;
