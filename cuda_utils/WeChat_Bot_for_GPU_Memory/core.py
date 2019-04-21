@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Author  : LemonNoel
+
 import os, time
 import argparse
 import paramiko
